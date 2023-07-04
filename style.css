@@ -16,18 +16,35 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
-  padding: 0 20px;
+  padding: 0 1rem;
 }
 
 .row {
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .col {
+  padding: 1rem;
+}
+
+.card {
+  background-color: blue;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
 }
 
 /************************************************
                     SECTION
  ************************************************/
+
+.section {
+  padding: 3rem 0;
+}
 
 #header {
   background-color: aqua;
@@ -41,21 +58,22 @@
 }
 
 #intro .col {
-  margin: 1rem;
   padding: 1rem;
 }
 
 #intro .card {
-  background-color: blue;
+  padding: 1rem;
+  width: 100%;
 }
 
-.card {
-  background-color: blue;
+#another-section {
+  background-color: darkgray;
 }
-
 /************************************************
                     RESPONSIVE
  ************************************************/
+
+/* TABLET */
 
 @media screen and (min-width: 768px) {
   #intro .row {
@@ -63,8 +81,16 @@
     flex-wrap: wrap;
   }
   #intro .col {
+    width: calc(100% / 3);
+  }
+  #intro .col:first-child {
+    width: calc(100% / 3 * 2);
+  }
+  #intro .col:first-child .card {
     display: flex;
-    width: calc(100 / 3);
+  }
+  #intro .card > .card-section {
+    width: 50%;
   }
 }
 
@@ -72,7 +98,12 @@
                     DEBUG
  ************************************************/
 
-.bordered {
+.bordered,
+.col {
   border: 2px dashed red;
   min-height: 50px;
+}
+
+.box-content {
+  line-height: 60px;
 }
