@@ -29,7 +29,6 @@
 }
 
 .card {
-  background-color: blue;
   border-radius: 2rem;
   padding: 1rem;
 }
@@ -42,8 +41,17 @@ li {
                     SECTION
  ************************************************/
 
-.section {
+#planning .card {
+  background-color: white;
+  padding: 1rem;
+}
+
+section {
   padding: 3rem 0;
+}
+
+section:nth-child(even) {
+  background-color: blueviolet;
 }
 
 #header {
@@ -62,13 +70,11 @@ li {
 }
 
 #intro .card {
+  background-color: blue;
   padding: 1rem;
   width: 100%;
 }
 
-#another-section {
-  background-color: darkgray;
-}
 /************************************************
                     RESPONSIVE
  ************************************************/
@@ -92,6 +98,39 @@ li {
   #intro .card > .card-section {
     width: 50%;
   }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  #intro .col:first-child .card {
+    display: flex;
+  }
+
+  #intro .card > .card-section {
+    width: 50%;
+  }
+}
+
+#planning .row {
+  display: flex;
+}
+
+#planning .col {
+  width: 50%;
+}
+
+#planning .col:last-child {
+  display: flex;
+  align-items: flex-end;
+}
+
+#planning .col:last-child .card {
+  width: 100%;
 }
 
 /************************************************
